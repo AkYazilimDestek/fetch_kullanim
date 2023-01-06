@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        table td,th {
+            text-align: center;
+        }
+    </style>
+</head>
+  <body class="bg-dark w-75 my-4 mx-auto">
+
+    <div class="card">
+        <div class="card-header">
+            <button class="btn btn-success w-100" id="ogrenci_getir_button">ÖĞRENCİ LİSTESİNİ GETİR</button>
+        </div>
+        <div class="card-body">
+    
+            <table class="table table-striped table-hover">
+                <thead>
+                    <th>ÖĞRENCİ ADI</th>
+                    <th>ÖĞRENCİ NO</th>
+                    <th>SINIFI</th>
+                </thead>
+                <tbody class="ogrenci_liste">
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <script>
+        var ogrenci_list = document.querySelector(".ogrenci_liste");
+        document.getElementById("ogrenci_getir_button").onclick = () => {
+            fetch("/data.json").then(x => x.text()).then((y) => {
+                var gelendata = JSON.parse(y);
+                var gelendata_html = "";
+                gelendata.forEach((element) => {
+                    gelendata_html += `
+                        <tr>
+                            <td>${element["ogrenciAdi"]}</td>
+                            <td>${element["ogrenciNo"]}</td>
+                            <td>${element["ogrenciSinif"]}</td>
+                        <tr>
+                    `;
+                });
+
+                ogrenci_list.innerHTML = gelendata_html;
+            });
+        }
+    </script>
+  </body>
+</html>

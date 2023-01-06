@@ -1,0 +1,30 @@
+[
+    {
+        "ogrenciNo":150,
+        "ogrenciAdi":"AHMET AKIN",
+        "ogrenciSinif" :"8/D"
+    },
+
+    {
+        "ogrenciNo":190,
+        "ogrenciAdi":"ABDULLAH KARTAL",
+        "ogrenciSinif" :"8/D"
+    },
+
+    {
+        "ogrenciNo":782,
+        "ogrenciAdi":"HASAN ÇEVİK",
+        "ogrenciSinif" :"8/D"
+    },
+
+    {
+        "ogrenciNo":462,
+        "ogrenciAdi":"HALİL İBRAHİM",
+        "ogrenciSinif" :"8/D"
+    },
+    {
+        "ogrenciNo":462,
+        "ogrenciAdi":"ÇENK KARASU",
+        "ogrenciSinif" :"8/D"
+    }
+]
